@@ -1,8 +1,135 @@
-<div class="container">
-  <img src="assets/banner.jpg" alt="banner">
-<div class="slots-date-container">
-  <div class="slots-date"><span>სლოტები</span> 10 იანვარი-12 მარტი</div>
-  <div class="close-button">X</div>
-</div>
 
+<div class="container">
+  <div class="mob-container"><div class="left-round"></div><div class="login-signup"><span class="sign-up">Sign Up</span><span class="sign-in">Sign In</span></div></div>
+
+  <div class="popup-container">
+    <div class="banner-container">
+      <div class="image-container">
+        <img src="assets/banner.jpg" alt="banner">
+      </div>
+      <div class="popup-header-row">
+        <div class="labels-container">
+          <span class="slots">სლოტები</span>
+          <span class="date">10 იანვარი - 12 მარტი</span>
+        </div>
+        <div class="close-button">
+          <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12 10.93 5.719-5.72c.146-.146.339-.219.531-.219.404 0 .75.324.75.749 0 .193-.073.385-.219.532l-5.72 5.719 5.719 5.719c.147.147.22.339.22.531 0 .427-.349.75-.75.75-.192 0-.385-.073-.531-.219l-5.719-5.719-5.719 5.719c-.146.146-.339.219-.531.219-.401 0-.75-.323-.75-.75 0-.192.073-.384.22-.531l5.719-5.719-5.72-5.719c-.146-.147-.219-.339-.219-.532 0-.425.346-.749.75-.749.192 0 .385.073.531.219z"/></svg>
+        </div>
+      </div>
+      <div class="banner-header">
+        <h2 class="banner-title1">მოიპოვე მრავალფეროვანი პრიზები და 10 საგზურიდან ერთ-ერთი</h2>
+        <p class="banner-title2">მოხვდი პოკერის ფესტივალზე მალტაში</p>
+      </div>
+    </div>
+    <div class="container-def">
+      <div class="main-tabs">
+        <ul>
+          <li  routerLinkActive="active" [routerLink]="['/first-tab']">
+            <span class="date">1 - 29 აპრილი</span>
+            <span class="title">Cash Games</span>
+          </li>
+          <li routerLinkActive="active" [routerLink]="['/second-tab']">
+            <span class="date">13 - 29 აპრილი</span>
+            <span class="title">Spring Series</span>
+          </li>
+          <li routerLinkActive="active" [routerLink]="['/third-tab']">
+            <span class="date">30 აპრილი</span>
+            <span class="title">Final Stage</span>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <div>
+          <router-outlet></router-outlet>
+        </div>
+
+        <section class="additional-info section-row">
+          <h2 class="action-title">წესები და პირობები</h2>
+          <div class="faq-item" (click)="ClickToOpen1()">
+            <div class="additional-info-header">
+              <h3 class="title">როდის იწყება და რა ფორმატით გაიმართება აქცია</h3>
+              <div class="icon-container">
+                <svg [ngClass]="{ 'open': isOpen1 }" style="color: #7D7D7D; width: 25px; height: 30px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+
+              </div>
+            </div>
+            <ng-container *ngIf="isOpen1">
+              <ul class="details-info">
+                <li>აქცია დაიწყება 1-ლ მაისს</li>
+                <li>ლიდერბორდებში ქულების დაგროვება მოხდება შემდეგი პირობით: 1ლ რეიქი = 1 ქულას</li>
+              </ul>
+            </ng-container>
+          </div>
+          <div class="faq-item" id="howToTakePart" (click)="ClickToOpen2()">
+            <div class="additional-info-header">
+              <h3 class="title">როგორ მივიღო აქციაში მონაწილეობა?</h3>
+              <div class="icon-container">
+                <svg [ngClass]="{ 'open': isOpen2 }" style="color: #7D7D7D; width: 25px; height: 30px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+              </div>
+            </div>
+            <ng-container *ngIf="isOpen2">
+              <ul class="details-info">
+                <li>აქციაში მონაწილეობა შეუძლია ყველას</li>
+                <li>ამისათის საჭიროა იყო 23 წლის და ზევით</li>
+                <li>აქცია შედგება 3 ეტაპისაგან სადაც მოგება შეგიძლია ყველა ეტაპზე</li>
+              </ul>
+            </ng-container>
+          </div>
+          <div class="faq-item">
+            <div class="additional-info-header">
+              <h3 class="title">სხვადასვა</h3>
+              <div class="icon-container">
+                <svg style="color: #7D7D7D; width: 25px; height: 30px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+              </div>
+            </div>
+            <div class="faq-body"></div>
+          </div>
+        </section>
+        <section class="similar-action section-row">
+          <h2 class="action-title">მსგავსი აქციები</h2>
+          <div class="carousel-container">
+            <drag-scroll [scrollbar-hidden]="true" class="similar-carousel">
+              <div drag-scroll-item class="image-container blue-color">
+                <img src="./assets/Rounded%201.png" alt="similar 1"/>
+                <div class="item-content">
+                  <h3 class="title">Get 300% Cashback</h3>
+                  <p>retrieve 300% bet amount as real money only here</p>
+                </div>
+              </div>
+              <div drag-scroll-item class="image-container orange-color">
+                <img src="./assets/Rounded%20vehicle.png" alt="similar 2"/>
+                <div class="item-content">
+                  <h3 class="title">Coming Soon</h3>
+                  <p>retrieve 300% bet amount as real money only here</p>
+                </div>
+              </div>
+              <div drag-scroll-item class="image-container purple-color">
+                <img src="./assets/Rounded%203.png" alt="similar 3"/>
+                <div class="item-content">
+                  <h3 class="title">Win a Jackpot</h3>
+                  <p>retrieve 300% bet amount as real money only here</p>
+                </div>
+              </div>
+              <div drag-scroll-item class="image-container blue-color">
+                <img src="./assets/Rounded%201.png" alt="similar 1"/>
+                <div class="item-content">
+                  <h3 class="title">Get 300% Cashback</h3>
+                  <p>retrieve 300% bet amount as real money only here</p>
+                </div>
+              </div>
+            </drag-scroll>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="play-button">
+      <button class="button"> ითამაშე</button>
+    </div>
+  </div>
 </div>

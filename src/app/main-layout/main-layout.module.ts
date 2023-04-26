@@ -5,6 +5,7 @@ import {RouterModule, RouterOutlet, Routes} from "@angular/router";
 import {FirstTabComponent} from "./tabs/first-tab/first-tab.component";
 import {SecondTabComponent} from "./tabs/second-tab/second-tab.component";
 import {ThirdTabComponent} from "./tabs/third-tab/third-tab.component";
+import {DragScrollModule} from "ngx-drag-scroll";
 
 
 const routes: Routes = [{
@@ -37,7 +38,8 @@ const routes: Routes = [{
     RouterModule.forRoot(routes),
     CommonModule,
     RouterOutlet,
-    RouterModule
+    RouterModule,
+    DragScrollModule
   ],
   exports: [RouterModule, MainLayoutComponent]
 })
