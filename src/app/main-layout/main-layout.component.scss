@@ -272,6 +272,7 @@
       justify-content: center;
       background-color: #171718;
       border-top: 5px solid #EF541C;
+      z-index: 999;
 
       @media screen {
         @media (max-width: 992px) {
